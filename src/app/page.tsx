@@ -8,7 +8,7 @@ import { eq } from "drizzle-orm";
 
 export default async function Home() {
   // const users = await db.query.Users.findMany();
-  // like sql style
+  // way2: like sql style
   const users = await db.select().from(Users).where(eq(Users.name, "JOKER"));
 
   return (
@@ -19,6 +19,7 @@ export default async function Home() {
         <Textarea name="description" placeholder="App Description"></Textarea>
         <Button type="submit">Submit</Button>
       </form>
+      {/* TODO:test */}
       {users.map((user) => (
         <div key={user.id}>{user.name}</div>
       ))}
