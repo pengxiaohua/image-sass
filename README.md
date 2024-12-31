@@ -2,7 +2,21 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+- clone
+
+```bash
+git clone https://github.com/pengxiaohua/image-sass
+
+cd image-sass
+```
+
+- install
+
+```bash
+pnpm install
+```
+
+- run
 
 ```bash
 pnpm dev
