@@ -1,8 +1,12 @@
 import GithubProvider from 'next-auth/providers/github';
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import { db } from '@/server/db/db';
+import {
+  AuthOptions,
+  getServerSession as nextAuthGetServerSession,
+} from 'next-auth';
 
-export const authOptions = {
+export const authOptions: AuthOptions = {
   adapter: DrizzleAdapter(db),
   providers: [
     GithubProvider({
@@ -11,3 +15,7 @@ export const authOptions = {
     }),
   ],
 };
+
+export function getServerSession() {
+  return nextAuthGetServerSession(authOptions);
+}

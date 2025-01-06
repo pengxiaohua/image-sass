@@ -5,13 +5,13 @@ import { Input } from "@/components/Input";
 import { Textarea } from "@/components/Textarea";
 
 import { UserInfo, SessionProviderNew } from "./UserInfo";
-import { useEffect } from "react";
-import { trpcClient } from "@/utils/api";
+import { trpcClientReact } from "@/utils/api";
 
 export default function Home() {
-  useEffect(() => {
-    trpcClient.hello.query()
-  }, [])
+  const { data, isLoading, isError } = trpcClientReact.hello.useQuery(void 0, {
+    refetchOnWindowFocus: false
+  })
+  console.log({ data, isLoading, isError })
 
   return (
     <div className="h-screen flex justify-center items-center">
