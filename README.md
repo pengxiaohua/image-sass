@@ -2,6 +2,15 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+- Start
+
+创建 `.env` 或者 `.env.local`，在 [Github Developer Setting](https://github.com/settings/developers) 中，新建一个 OAuth app，然后复制 GITHUB_ID 和 GITHUB_SECRET 到 `.env` 或 `.env.local` 中：
+
+```bash
+GITHUB_ID=xxxxx
+GITHUB_SECRET=xxxxxx
+```
+
 - clone
 
 ```bash
