@@ -10,15 +10,6 @@ export function GET(request: NextRequest) {
   const name = query.get('name');
   const email = query.get('email');
 
-  //   try {
-  //     const result = inputSchema.parse({
-  //       name,
-  //       email,
-  //     });
-  //     return NextResponse.json(result);
-  //   } catch (err: any) {
-  //     return NextResponse.json({ error: err.message });
-  //   }
   const result = updateUserSchema.safeParse({
     name,
     email,
